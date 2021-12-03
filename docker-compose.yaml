@@ -7,8 +7,7 @@ services:
             - db
         volumes:
             - ./php/hms:/var/www/html/
-        ports:
-- "8000:80"
+        ports: '8000:80'
 network:
 - backend
 db:
@@ -19,7 +18,7 @@ environment:
 MYSQL_ROOT_PASSWORD: ""
 MYSQL_DATABASE: hotelmanagement
 ports:
-- "3306:3306"
+- '3306:3306'
 volumes:
 - db :/var/lib/mysql
 - ./hotelmanagement.sql:/docker-entrypoint-initdb.d/hotelmanagement.sql
