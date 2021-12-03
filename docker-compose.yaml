@@ -8,22 +8,22 @@ services:
         volumes:
             - ./php/hms:/var/www/html/
         ports:
-            - 8000:80
-            network:
-                - backend
-    db:
-        container_name: db
-        image: mysql
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: ""
-	    MYSQL_DATABASE: hotelmanagement
-        ports:
-            - "3306:3306"
-            volumes:
-                - db :/var/lib/mysql
-                - ./hotelmanagement.sql:/docker-entrypoint-initdb.d/hotelmanagement.sql
-                network:
+- "8000:80"
+network:
+- backend
+db:
+container_name: db
+image: mysql
+restart: always
+environment:
+MYSQL_ROOT_PASSWORD: ""
+MYSQL_DATABASE: hotelmanagement
+ports:
+- "3306:3306"
+volumes:
+- db :/var/lib/mysql
+- ./hotelmanagement.sql:/docker-entrypoint-initdb.d/hotelmanagement.sql
+network:
                     - backend
 
         networks:
