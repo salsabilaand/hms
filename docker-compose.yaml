@@ -1,7 +1,7 @@
 version: '3.8'
 services:
     app:
-        image: mayzura/sisterkuis2
+        image: mayzura/kuis2_sister
         container_name: php-apache
         depends_on:
             - db
