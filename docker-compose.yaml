@@ -23,15 +23,12 @@ volumes:
 - db :/var/lib/mysql
 - ./hotelmanagement.sql:/docker-entrypoint-initdb.d/hotelmanagement.sql
 network:
-                    - backend
-
-        networks:
-            backend:
-                name: backend-networks
-                ipam: 
-                    driver: default
-                    config: 
-                        -subnet: 172.20.0.0/24
+    - backend
+    name: backend-networks
+    ipam: 
+    driver: default
+    config: 
+    subnet: 172.20.0.0/24
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
